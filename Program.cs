@@ -42,7 +42,7 @@ namespace Revisao {
                         //TODO: listar alunos
                         foreach(var a in alunos)
                         {
-                            if (string.IsNullOrEmpty() )
+                            if (!string.IsNullOrEmpty(a.Nome))
                             {    
                                 Console.WriteLine($"Aluno: {a.Nome} - Nota: {a.Nota}");
                             }
@@ -50,6 +50,19 @@ namespace Revisao {
                         break;
                     case "3":
                         //TODO: calcular media geral
+                        decimal notaTotal = 0;
+                        var nrAlunos = 0;
+                        for (int i=0; i < alunos.Length; i++);
+                        {
+                            if (!string.IsNullOrEmpty(alunos[i].Nome));
+                            {
+                                notaTotal = notaTotal + alunos[i].Nota;
+                                nrAlunos++;
+                            }
+                        }
+
+                        var mediaGeral = notaTotal / nrAlunos;
+                        Console.WriteLine($"Media geral: {mediaGeral}");
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
