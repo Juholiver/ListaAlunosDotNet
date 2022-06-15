@@ -5,7 +5,7 @@ namespace Revisao {
     class Program 
     {
 
-        static void Main(string []  args)
+        static void Main (string []  args, int v)
         {
 
             Aluno[] alunos =new Aluno[5];
@@ -20,7 +20,8 @@ namespace Revisao {
                         //TODO: adicionar aluno
                         Console.WriteLine("Informe o nome do aluno: ");
                         var aluno = new Aluno();
-                        aluno.Nome = Console.ReadLine();
+                        string? v1 = Console.ReadLine();
+                        aluno.Nome = v;
 
                         Console.WriteLine("Informe a nota do aluno: ");
                         
@@ -39,6 +40,13 @@ namespace Revisao {
                         break;
                     case "2":
                         //TODO: listar alunos
+                        foreach(var a in alunos)
+                        {
+                            if (string.IsNullOrEmpty() )
+                            {    
+                                Console.WriteLine($"Aluno: {a.Nome} - Nota: {a.Nota}");
+                            }
+                        }
                         break;
                     case "3":
                         //TODO: calcular media geral
